@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="video.js" defer></script>
         <script src="function.js" defer></script>
+        <link rel="stylesheet" href="style.css">
         <title>Document</title>
     </head>
     <body>
-        <iframe id="videoPlayer" width="640" height="360" frameborder="0" src="https://mega.nz/embed/OApA1SBI#_hw6v5BxLoJnGy5QwUXnrTY0b-ZxU26A86dzM3-JFMM" allowfullscreen ></iframe>
+        <div class="video-container">
+            <div class="ep-counter">S1 E1</div>
+            <div class="title">Demon Slayer / Kimetsu No Yaiba</div>
+            <iframe id="video-player" frameborder="0" src="https://mega.nz/embed/bQgyEBKS#SyH3NP7KASXcQZduqwLRx-wFUDctkdHdK0i2z_We9yA" allowfullscreen ></iframe>
+            <div class="button-container">
+                <button onclick="back()" class="back-button"><div class="back-icon"></div></button>
+                <button class="home-button"><div class="home-icon"></div></button>
+                <button onclick="next()" class="next-button"><div class="next-icon"></div></button>
+            </div>
+        </div>
     </body>
 </html>
