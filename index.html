@@ -4,20 +4,69 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="video.js" defer></script>
-        <script src="function.js" defer></script>
-        <link rel="stylesheet" href="style.css">
+        <script src="index.js" defer></script>
+        <link rel="stylesheet" href="index.css">
         <title>Document</title>
     </head>
     <body>
-        <div class="video-container">
-            <div class="ep-counter">S1 E1</div>
-            <div class="title">Demon Slayer / Kimetsu No Yaiba</div>
-            <iframe id="video-player" frameborder="0" src="https://mega.nz/embed/bQgyEBKS#SyH3NP7KASXcQZduqwLRx-wFUDctkdHdK0i2z_We9yA" allowfullscreen ></iframe>
-            <div class="button-container">
-                <button onclick="back()" class="back-button"><div class="back-icon"></div></button>
-                <button class="home-button"><div class="home-icon"></div></button>
-                <button onclick="next()" class="next-button"><div class="next-icon"></div></button>
+        <div class="mobile">
+            <div class="title"> {site name} </div>
+            <div class="sub-title"> {site slogan} </div>
+            <div class="slider">
+                <ul class="slides-container">
+                    <li class="slide" onclick="goToShow('demonSlayer')"><div class="parallax"></div></li>
+                    <li class="slide" onclick="goToShow('demonSlayer')"><div class="parallax"></div></li>
+                    <li class="slide" onclick="goToShow('demonSlayer')"><div class="parallax"></div></li>
+                    <li class="slide" onclick="goToShow('demonSlayer')"><div class="parallax"></div></li>
+                    <li class="slide" onclick="goToShow('demonSlayer')"><div class="parallax"></div></li>
+                    <li class="slide" onclick="goToShow('demonSlayer')"><div class="parallax"></div></li>
+                    <li class="slide" onclick="goToShow('demonSlayer')"><div class="parallax"></div></li>
+                    <li class="slide" onclick="goToShow('demonSlayer')"><div class="parallax"></div></li>
+                    <li class="slide" onclick="goToShow('demonSlayer')"><div class="parallax"></div></li>
+                    <li class="slide" onclick="goToShow('demonSlayer')"><div class="parallax"></div></li>
+                    <li class="slide" onclick="goToShow('demonSlayer')"><div class="parallax"></div></li>
+                    <li class="slide" onclick="goToShow('demonSlayer')"><div class="parallax"></div></li>
+                    <li class="slide" onclick="goToShow('demonSlayer')"><div class="parallax"></div></li>
+                    <li class="slide" onclick="goToShow('demonSlayer')"><div class="parallax"></div></li>
+                </ul>
+            </div>
+        </div>
+        <div class="desktop">
+            <div class="title"> {site name} </div>
+            <div class="sub-title"> {site slogan} </div>
+            <div class="scroll-holder">        
+                <div class="scroll-tray-1">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                </div>
+                <div class="scroll-tray-2">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                    <img onclick="goToShow('demonSlayer')" src="img/demonSlayer.jpg">
+                </div>
             </div>
         </div>
     </body>

@@ -13,7 +13,7 @@
     --cursor: normal;
 }
 
-@media screen and (orientation: landscape) {
+@media screen and (min-width: 800px) {
     .video-container {
         display: flex;
         flex-direction: column;
@@ -24,6 +24,7 @@
         position: relative;
         width: 50vw;
         aspect-ratio: 16/9;
+        border: none;
     }
     .button-container {
         display: flex;
@@ -62,8 +63,60 @@
         justify-content: center;
         align-items: center;
     }
-    
-    .ep-counter {
+}
+
+@media screen and (max-width: 800px) {
+    .video-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    #video-player {
+        position: relative;
+        width: 100vw;
+        aspect-ratio: 16/9;
+        border: none;
+    }
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .back-button, .home-button, .next-button {
+        width: 35vw;
+        height: 4vh;
+        border: none;
+        background-color: var(--button-color);
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .back-button:hover, .home-button:hover, .next-button:hover {
+        filter: brightness(0.8)
+    }
+    .back-button {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .home-button {
+        width: 30vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .next-button {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.ep-counter {
         position: relative;
         transition: 0.5s;
 
@@ -83,7 +136,6 @@
 
         margin-bottom: 10px;
     }
-}
 
 body {
     width: 100vw;

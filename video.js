@@ -34,8 +34,6 @@ var shows = {
 
 currentEp = 0
 
-var currentShow = shows.demonSlayer
-
 function back() {
     if (currentEp != 0) {
         currentEp--
@@ -56,3 +54,11 @@ function next() {
     videoPlayer.src = currentShow[currentEp].src
     epCounter.textContent = currentShow[currentEp].epNum
 }
+
+
+
+var clickedShow = localStorage.getItem("clickedShow")
+var currentShow = shows[clickedShow]
+
+videoPlayer.src = currentShow[0].src
+epCounter.src = currentShow[0].epCounter
