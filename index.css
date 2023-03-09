@@ -2,6 +2,10 @@ body {
     background-color: rgb(31, 34, 56);
 }
 
+img {
+    cursor: pointer;
+}
+
 @media screen and (min-width: 800px) {
     .mobile {
         display: none
@@ -43,34 +47,41 @@ body {
       
       .scroll-tray-1 img {
         width: 220px;
+        aspect-ratio: 2/3;
         border-radius: 0.3rem;
         margin: 5px 5px;
         padding: 0;
       }
-      
       .scroll-tray-2 img {
-        width: 180px;
+        width: 150px;
+        aspect-ratio: 2/3;
         border-radius: 0.3rem;
         margin: 5px 5px;
         padding: 0;
       }
       
-      .scroll-holder .scroll-tray-1:first-child,
-      .scroll-holder .scroll-tray-2:first-child {
-        animation: scroll-tray-hero 20s linear infinite;
+      .scroll-tray-1 {
+        animation: scroll-tray-hero-1 25s linear infinite;
+      }
+      .scroll-tray-2 {
+        animation: scroll-tray-hero-2 15s linear infinite;
       }
       
-      .scroll-holder .scroll-tray-1:last-child,
-      .scroll-holder .scroll-tray-2:last-child {
-        animation: scroll-tray-hero 15s linear infinite;
-      }
       
-      @keyframes scroll-tray-hero {
+      @keyframes scroll-tray-hero-1 {
         0% {
           transform: translateX(0);
         }
         100% {
-          transform: translateX(-800px);
+          transform: translateX(-3265px);
+        }
+      }
+      @keyframes scroll-tray-hero-2 {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-2295px);
         }
       }
 }
@@ -138,8 +149,8 @@ body {
       .slider .slide {
         position: relative;
         display: block;
-        width: 100%;
-        height: 60%;
+        width: 100% !important;
+        height: 60% !important;
         background-color: rgba(69, 76, 126, 0.692);
         opacity: .8;
         transform: scale(.9);
@@ -185,7 +196,7 @@ body {
       
       
       .slider .slide:nth-child(1) { background-image: url("img/demonSlayer.jpg"); }
-      .slider .slide:nth-child(2) { background-image: url("img/demonSlayer.jpg"); }
+      .slider .slide:nth-child(2) { background-image: url("img/thePromisedNeverland.jpg"); }
       .slider .slide:nth-child(3) { background-image: url("img/demonSlayer.jpg"); }
       .slider .slide:nth-child(4) { background-image: url("img/demonSlayer.jpg"); }
       .slider .slide:nth-child(5) { background-image: url("img/demonSlayer.jpg"); }
