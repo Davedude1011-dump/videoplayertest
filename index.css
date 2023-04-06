@@ -151,7 +151,7 @@ img {
         display: block;
         width: 100% !important;
         height: 60% !important;
-        background-color: rgba(69, 76, 126, 0.692);
+        background-color: transparent;
         opacity: .8;
         transform: scale(.9);
         transform-origin: center;
@@ -197,8 +197,8 @@ img {
       
       .slider .slide:nth-child(1) { background-image: url("img/demonSlayer.jpg"); }
       .slider .slide:nth-child(2) { background-image: url("img/thePromisedNeverland.jpg"); }
-      .slider .slide:nth-child(3) { background-image: url("img/demonSlayer.jpg"); }
-      .slider .slide:nth-child(4) { background-image: url("img/demonSlayer.jpg"); }
+      .slider .slide:nth-child(3) { background-image: url("img/classroomOfTheElite.jpeg"); }
+      .slider .slide:nth-child(4) { background-image: url("img/aCertainScientificRailgun.jpeg"); }
       .slider .slide:nth-child(5) { background-image: url("img/demonSlayer.jpg"); }
       .slider .slide:nth-child(6) { background-image: url("img/demonSlayer.jpg"); }
       .slider .slide:nth-child(7) { background-image: url("img/demonSlayer.jpg"); }
