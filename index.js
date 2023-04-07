@@ -130,3 +130,42 @@ const sliders = []
 $sliders.forEach( ($slider) => { 
   sliders.push( new Slider($slider) )
 })
+
+
+
+
+var recentShowName = localStorage.getItem("mostRecentShow")
+var recentShowEp = localStorage.getItem("mostRecentShowEp")
+
+var siteName = " {site name} "
+var siteSlogan = " {site slogan} "
+
+var siteNameElement = document.querySelectorAll(".title")
+var siteSloganElement = document.querySelectorAll(".sub-title")
+
+function setTitlesToTitles() {
+  siteNameElement.forEach(function(element) {
+    element.textContent = siteName;
+  });
+  
+  siteSloganElement.forEach(function(element) {
+    element.textContent = siteSlogan;
+  });
+}
+
+function setTitlesToShowStats() {
+  siteNameElement.forEach(function(element) {
+    element.textContent = recentShowName.replace(/([A-Z])/g, " $1");
+  });
+  
+  siteSloganElement.forEach(function(element) {
+    element.textContent = "ep. " + (parseInt(recentShowEp)-1);
+  });
+}
+
+function continueMostRecent() {
+  goToShow(recentShowName)
+}
+
+
+setTitlesToTitles()

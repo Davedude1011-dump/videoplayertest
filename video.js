@@ -3,7 +3,8 @@ var epCounter = document.querySelector(".ep-counter")
 
 var shows = {
     demonSlayer: [
-        "Demon Slayer / Kimetsu No Yaiba",
+        "demon Slayer",
+        localStorage.getItem("DemonSlayerEp") || 2,
         {epNum: "S1 E1 ", src: "https://mega.nz/embed/bQgyEBKS#SyH3NP7KASXcQZduqwLRx-wFUDctkdHdK0i2z_We9yA"},
         {epNum: "S1 E2 ", src: "https://mega.nz/embed/XIJG3DCT#dkFXXGDOmkx0_XMpCrPv8bDABGJCzsdWPPHOjflNK5Q"},
         {epNum: "S1 E3 ", src: "https://mega.nz/embed/jNox3IYQ#RJDwf7pSr4Tp7vjZTThq7WbWneNiCt032HttE4oPBJU"},
@@ -53,7 +54,8 @@ var shows = {
     ],
 
     thePromisedNeverland: [
-        "The Promised Neverland / Yakusoku No Neverland",
+        "the Promised Neverland",
+        localStorage.getItem("ThePromisedNeverlandEp") || 2,
         {epNum: "S1 E1 ", src: "https://mega.nz/embed/6IQVTDQD#jBqd2Wqak-m146NQEfXBiQK97osAHi3yAhYQD9-BoqA"},
         {epNum: "S1 E2 ", src: "https://mega.nz/embed/PExVDLrQ#kGrRfDSaBGyRZ1nuSF8RsPjGTtBLcZGYWagic42xe6w"},
         {epNum: "S1 E3 ", src: "https://mega.nz/embed/CcZTwbBR#qda9Jvjp849nF6vRgRxwaACPlESKH9XSL0ncjP-DVbQ"},
@@ -81,7 +83,8 @@ var shows = {
     ],
 
     classroomOfTheElite: [
-        "Classroom of The Elite",
+        "classroom of The Elite",
+        localStorage.getItem("classroomOfTheEliteEp") || 2,
         {epNum: "S1 E1 ", src: "https://mega.nz/embed/tJdHzYJb#_fxHEP9EZxEzT3O0EXIoBTCyZ82_5SVmR7jVGUaPEL4"},
         {epNum: "S1 E2 ", src: "https://mega.nz/embed/pZt1WSpQ#ou-PVjqE2weoFTQxP7RGe1Nrrtr4nAXSCx596-YKlv0"},
         {epNum: "S1 E3 ", src: "https://mega.nz/embed/kFdkmA7I#BD44U3AtryoXbe0YiqkH9yAXqWuS7eWoRe1bHWTrq6A"},
@@ -112,6 +115,7 @@ var shows = {
 
     aCertainScientificRailgun: [
         "a Certain Scientific Railgun",
+        localStorage.getItem("aCertainScientificRailgunEp") || 2,
         {epNum: "S1 E1 ", src: "https://mega.nz/embed/kEtwxTBJ#Tvft7TpKj-WS8JQA1J_0rA8uUmhujBwL7UxX4aOXxPw"},
         {epNum: "S1 E2 ", src: "https://mega.nz/embed/tNk1kZwK#KKpczUi2f9vq_iBiUe2JYDgV0zGhaFFvg_9pCFNlAmk"},
         {epNum: "S1 E3 ", src: "https://mega.nz/embed/AN1DyRZT#cLWgLnQib-51CSFsFJuabHMIF1ZqhegQ6T32uAbaeqM"},
@@ -190,47 +194,44 @@ var shows = {
     ]
 }
 
-currentEp = 1
-
 function back() {
-    if (currentEp != 1) {
+    if (currentEp != 2) {
         currentEp--
     }
     else {
-        currentEp = currentShow.length-1
+        currentEp = currentShow.length-2
     }
     videoPlayer.src = currentShow[currentEp].src
     epCounter.textContent = currentShow[currentEp].epNum
 }
 function next() {
-    if (currentEp != currentShow.length-1) {
+    if (currentEp != currentShow.length-2) {
         currentEp++
     }
     else {
-        currentEp = 1
+        currentEp = 2
     }
     videoPlayer.src = currentShow[currentEp].src
     epCounter.textContent = currentShow[currentEp].epNum
 }
 
-
-
 var clickedShow = localStorage.getItem("clickedShow")
 var currentShow = shows[clickedShow]
 
-videoPlayer.src = currentShow[1].src
-epCounter.src = currentShow[1].epCounter
+currentEp = parseInt(currentShow[1])
+console.log(currentShow[currentEp].epNum)
+
+videoPlayer.src = currentShow[currentEp].src
+epCounter.textContent = currentShow[currentEp].epNum
 document.querySelector(".title").textContent = currentShow[0]
 
+window.addEventListener("beforeunload", function(event) {
+    localStorage.setItem(`${currentShow[0].split(" ").join("")}Ep`, currentEp)
+});
 
-// watch time code:
-
-var video = document.getElementById('video-player');
-
-// Add an event listener to the video's 'timeupdate' event
-video.addEventListener('pause', function() {
-    console.log("hllo")
-    var currentTime = video.currentTime;
-    localStorage.setItem('video-' + video.src, currentTime);
-    console.log("hllo")
-  });
+function goHome() {
+    localStorage.setItem(`${currentShow[0].split(" ").join("")}Ep`, currentEp)
+    localStorage.setItem("mostRecentShow", currentShow[0].split(" ").join(""))
+    localStorage.setItem("mostRecentShowEp", currentEp)
+    window.open("index.html", "_same")
+}
